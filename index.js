@@ -7,10 +7,13 @@ const http = require("http");
 const path = require("path");
 const fs = require("fs");
 const showdown = require("showdown");
+
 const converter = new showdown.Converter();
 
 const app = express();
 const server = http.createServer(app);
+
+require("./config");
 
 app.use(helmet());
 app.use(logger("dev"));
@@ -55,6 +58,7 @@ app.use("*", (req, res) => {
 server.listen(process.env.PORT || 5000);
 /** Event listener for HTTP server "listening" event. */
 server.on("listening", () => {
+  // eslint-disable-next-line no-console
   console.log(
     `Listening on port :: http://localhost:${server.address().port}/`
   );

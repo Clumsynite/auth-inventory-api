@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const mongoose = require("mongoose");
 
 const CONNECTION_URL = process.env.DB_URL;
@@ -6,7 +7,7 @@ mongoose.connect(CONNECTION_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
-  useFindAndModify: false
+  useFindAndModify: false,
 });
 
 mongoose.connection.on("connected", () => {
