@@ -28,8 +28,6 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pug": "^3.0.2",
-    "showdown": "^1.9.1",
-    "swagger-jsdoc": "5.0.1",
-    "swagger-ui-express": "^4.1.6"
+    "showdown": "^1.9.1"
   }
 }
