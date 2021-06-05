@@ -43,17 +43,17 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   res.locals.user = req.user;
   next();
 });
 
-app.use("*", (req, res) => {
-  return res.status(404).json({
+app.use("*", (req, res) =>
+  res.status(404).json({
     success: false,
     error: "API endpoint doesn't exists",
-  });
-});
+  })
+);
 
 server.listen(process.env.PORT || 5000);
 /** Event listener for HTTP server "listening" event. */
