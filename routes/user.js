@@ -7,7 +7,7 @@ router
   .get("/", user.onGetAllUsers)
   .post("/", user.onCreateUser)
   .put("/", decode, user.onUpdateUser)
-  .get("/:id", user.onDeleteUserByUsername)
-  .delete("/:id", decode, user.onDeleteUserByUsername);
+  .get("/:id", user.onGetUserByUsername)
+  .delete("/:id", decode, user.onDeleteCurrentUser);
 
 module.exports = router;

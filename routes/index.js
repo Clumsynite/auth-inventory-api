@@ -1,3 +1,6 @@
-const router = require("express").Router();
+const auth = require("./auth");
+const inventory = require("./inventory");
+const user = require("./user");
+const util = require("./util");
 
-export default router;
+module.exports = { auth, inventory, user, util };

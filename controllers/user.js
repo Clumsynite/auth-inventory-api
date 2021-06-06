@@ -66,7 +66,7 @@ exports.onUpdateUser = async (req, res) => {
   }
 };
 
-exports.onDeleteUserByUsername = async (req, res) => {
+exports.onDeleteCurrentUser = async (req, res) => {
   try {
     const { username } = req.user;
     const user = await User.deleteOne({ username });

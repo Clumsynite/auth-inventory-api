@@ -14,7 +14,7 @@ exports.getAllItems = async (req, res) => {
 };
 
 // get items for the current user
-exports.getAllItems = async (req, res) => {
+exports.gettemsForUser = async (req, res) => {
   try {
     const { username } = req.body;
     if (!username)
@@ -30,7 +30,7 @@ exports.getAllItems = async (req, res) => {
   }
 };
 
-exports.getItem = async (req, res) => {
+exports.getItemByID = async (req, res) => {
   try {
     const { _id } = req.params;
     const item = await Item.findOne({ _id });
@@ -64,7 +64,7 @@ exports.addNewItem = async (req, res) => {
   }
 };
 
-exports.updateItem = async (req, res) => {
+exports.updateItemByID = async (req, res) => {
   try {
     const { _id } = req.body;
     await Item.findByIdAndUpdate(
@@ -82,7 +82,7 @@ exports.updateItem = async (req, res) => {
   }
 };
 
-exports.deleteItem = async (req, res) => {
+exports.deleteItemByID = async (req, res) => {
   try {
     const { _id, name } = req.body;
     const item = await Item.deleteOne({ _id });
