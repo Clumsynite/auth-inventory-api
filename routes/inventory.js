@@ -3,9 +3,9 @@ const router = require("express").Router();
 const inventory = require("../controllers/inventory");
 
 router
-  .get("/", inventory.gettemsForUser)
-  .post("/", inventory.addNewItem)
   .get("/:id", inventory.getItemByID)
+  .get("/", inventory.getItemsForUser)
+  .post("/", inventory.addNewItem)
   .put("/:id", inventory.updateItemByID)
   .delete("/:id", inventory.deleteItemByID);
 

@@ -8,6 +8,9 @@ const path = require("path");
 const fs = require("fs");
 const showdown = require("showdown");
 
+const routes = require("./routes");
+const { decode } = require("./middlewares/jwt");
+
 const converter = new showdown.Converter();
 
 const app = express();
@@ -47,6 +50,11 @@ app.use((req, res, next) => {
   res.locals.user = req.user;
   next();
 });
+
+app.use("/auth", routes.auth);
+app.use("/user", routes.user);
+app.use("/inventory", decode, routes.inventory);
+app.use("/util", routes.util);
 
 app.use("*", (req, res) =>
   res.status(404).json({

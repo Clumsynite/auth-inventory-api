@@ -14,7 +14,7 @@ exports.getAllItems = async (req, res) => {
 };
 
 // get items for the current user
-exports.gettemsForUser = async (req, res) => {
+exports.getItemsForUser = async (req, res) => {
   try {
     const { username } = req.body;
     if (!username)
