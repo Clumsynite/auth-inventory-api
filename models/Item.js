@@ -8,6 +8,7 @@ const itemSchema = new Schema(
     name: { type: String, required: true },
     quantity: { type: Number, required: true },
     user: { type: String, required: true },
+    photo: { type: String, required: false },
   },
   {
     timestamps: true,

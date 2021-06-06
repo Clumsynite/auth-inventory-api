@@ -10,6 +10,7 @@ const userSchema = new Schema(
     email: { type: String, required: true },
     password: { type: String, required: true },
     joined: { type: Date, default: Date.now },
+    photo: { type: String, required: false },
   },
   {
     timestamps: true,
