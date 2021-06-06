@@ -13,7 +13,8 @@ exports.login = (req, res) => {
       if (error) {
         return res.json({ error, success: false });
       }
-      const token = jwt.sign(user, process.env.SECRET);
+      const { _doc } = user;
+      const token = jwt.sign({ ..._doc, photo: "" }, process.env.SECRET);
       res.cookie("auth", token, {
         path: "/",
         secure: true,
