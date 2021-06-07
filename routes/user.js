@@ -5,7 +5,7 @@ const { decode } = require("../middlewares/jwt");
 
 router
   .get("/:id", decode, user.onGetUserByUsername)
-  .get("/", user.onGetAllUsers)
+  // .get("/", user.onGetAllUsers)
   .post("/", user.onCreateUser)
   .put("/", decode, user.onUpdateUser)
   .delete("/:id", decode, user.onDeleteCurrentUser);
