@@ -9,6 +9,7 @@ const itemSchema = new Schema(
     quantity: { type: Number, required: true },
     user: { type: String, required: true },
     photo: { type: String, required: false },
+    updated: { type: Date, default: Date.now },
   },
   {
     timestamps: true,
