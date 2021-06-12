@@ -37,7 +37,7 @@ exports.getItemByID = async (req, res) => {
     return res.status(200).json({
       success: true,
       item,
-      message: `${item.name}, successfully retreived`,
+      msg: `${item.name}, successfully retreived`,
     });
   } catch (error) {
     return res.status(500).json({ success: false, error });
@@ -88,7 +88,7 @@ exports.deleteItemByID = async (req, res) => {
     const item = await Item.deleteOne({ _id });
     return res.status(200).json({
       success: true,
-      message: `Deleted a count of ${item.deletedCount} item with name: ${name}.`,
+      msg: `Deleted a count of ${item.deletedCount} item with name: ${name}.`,
     });
   } catch (error) {
     return res.status(500).json({ success: false, error });

@@ -17,7 +17,7 @@ exports.onGetUserByUsername = async (req, res) => {
     const user = await User.findOne({ username });
     return res
       .status(200)
-      .json({ success: true, user, message: `${username}'s data retreived` });
+      .json({ success: true, user, msg: `${username}'s data retreived` });
   } catch (error) {
     return res.status(500).json({ success: false, error });
   }
@@ -72,7 +72,7 @@ exports.onDeleteCurrentUser = async (req, res) => {
     const user = await User.deleteOne({ username });
     return res.status(200).json({
       success: true,
-      message: `Deleted a count of ${user.deletedCount} user.`,
+      msg: `Deleted a count of ${user.deletedCount} user.`,
     });
   } catch (error) {
     return res.status(500).json({ success: false, error });
