@@ -1,7 +1,7 @@
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
 
-exports.login = (req, res) => {
+exports.login = (req, res) =>
   passport.authenticate("local", (err, user) => {
     if (err || !user) {
       return res.json({
@@ -29,7 +29,6 @@ exports.login = (req, res) => {
       });
     });
   })(req, res);
-};
 
 exports.logout = async (req, res) => {
   try {

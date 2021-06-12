@@ -7,6 +7,7 @@ const http = require("http");
 const path = require("path");
 const fs = require("fs");
 const showdown = require("showdown");
+const passport = require("passport");
 
 const routes = require("./routes");
 const { decode } = require("./middlewares/jwt");
@@ -38,6 +39,9 @@ app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get("/", (req, res) => {
   fs.readFile("./README.md", "utf8", (err, data) => {
