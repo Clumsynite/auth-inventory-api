@@ -2,8 +2,8 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
 exports.decode = async (req, res, next) => {
-  const bearerHeader = req.headers.authorization;
-  const token = req.cookies.auth;
+  const bearerHeader = req?.headers?.authorization;
+  const token = req?.cookies?.auth;
   if (bearerHeader) {
     const bearer = bearerHeader.split(" ");
     const bearerToken = bearer[1];

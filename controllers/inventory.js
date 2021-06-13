@@ -16,7 +16,7 @@ exports.getAllItems = async (req, res) => {
 // get items for the current user
 exports.getItemsForUser = async (req, res) => {
   try {
-    const { username } = req.body;
+    const { username } = req.user;
     if (!username)
       return res
         .status(500)
