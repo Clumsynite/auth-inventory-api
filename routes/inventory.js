@@ -6,7 +6,9 @@ router
   .get("/:id", inventory.getItemByID)
   .get("/", inventory.getItemsForUser)
   .post("/", inventory.addNewItem)
-  .put("/:id", inventory.updateItemByID)
-  .delete("/:id", inventory.deleteItemByID);
+  .put("/", inventory.updateItemByID)
+  .delete("/", inventory.deleteItemByID);
+
+// updateItemByID, deleteItemByID get itemID from the item sent through request body
 
 module.exports = router;
