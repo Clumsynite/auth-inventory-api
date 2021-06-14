@@ -8,6 +8,8 @@ router
   // .get("/", user.onGetAllUsers)
   .post("/", user.onCreateUser)
   .put("/", decode, user.onUpdateUser)
-  .delete("/:id", decode, user.onDeleteCurrentUser);
+  .delete("/", decode, user.onDeleteCurrentUser);
+
+// update & delete user routes gets user object from the decoded jwt
 
 module.exports = router;
