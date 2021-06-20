@@ -17,7 +17,7 @@ exports.getAvatarByUsername = async (req, res) => {
     const { username } = req.params;
     const { photo } = await User.findOne({ username });
     res.json({
-      successs: true,
+      success: true,
       photo,
       msg: "User avatar retrieved successfully",
     });
