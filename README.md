@@ -65,3 +65,29 @@ If there's no variable in [`Endpoint's result`](#endpoints) read `msg`
 
 - `success` : boolean
 - `msg` : String, a message which can be used as response on frontend
+
+## Local Development
+
+### Install
+
+```
+  npm i
+```
+
+Install all packages
+
+### Start
+
+```
+  npm start
+```
+
+Starts the express server.
+
+### Start in development mode
+
+```
+  npm run dev
+```
+
+Similar to [`start`](###Start) but, restarts the server on file change
