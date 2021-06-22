@@ -14,15 +14,18 @@ exports.login = (req, res) =>
         return res.json({ error, success: false });
       }
       const { _doc } = user;
-      const token = jwt.sign({ ..._doc, photo: "" }, process.env.SECRET);
-      res.cookie("auth", token, {
-        path: "/",
-        secure: true,
-        httpOnly: true,
-        sameSite: "none",
-      });
+      const { photo, web } = req.body;
+      const userWithNoPhoto = { ..._doc, photo: false };
+      const token = jwt.sign(userWithNoPhoto, process.env.SECRET);
+      if (web)
+        res.cookie("auth", token, {
+          path: "/",
+          secure: true,
+          httpOnly: true,
+          sameSite: "none",
+        });
       return res.json({
-        user,
+        user: photo ? user : userWithNoPhoto,
         success: true,
         token,
         msg: "Login Successful",
