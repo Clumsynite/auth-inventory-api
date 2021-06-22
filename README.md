@@ -90,4 +90,4 @@ Starts the express server.
   npm run dev
 ```
 
-Similar to [`start`](###Start) but, restarts the server on file change
+Similar to [`start`](#start) but, restarts the server on file change
